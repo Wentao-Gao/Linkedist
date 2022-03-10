@@ -91,9 +91,9 @@ class ListNode{
 
 ### [203. 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/) - [视频讲解](https://www.youtube.com/watch?v=JI71sxtHTng) - [思路讲解](https://www.programmercarl.com/0203.%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0.html)
 
+```
 **给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点。**
 
- ```
 示例：
 
 示例 1：
@@ -135,6 +135,7 @@ class Solution:
 
 ### [707. 设计链表](https://leetcode-cn.com/problems/design-linked-list/) - [视频讲解](https://www.youtube.com/watch?v=uLSbZzLaeQ4) - [思路讲解](https://www.programmercarl.com/0707.%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8.html#%E4%BB%A3%E7%A0%81)
 
+```
 设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：val 和 next。val 是当前节点的值，next 是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性 prev 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。
 
 在链表类中实现这些功能：
@@ -149,7 +150,6 @@ addAtIndex(index,val)：在链表中的第 index 个节点之前添加值为 
 
 deleteAtIndex(index)：如果索引 index 有效，则删除链表中的第 index 个节点。
  
-```
 示例：
 
 MyLinkedList linkedList = new MyLinkedList();
@@ -237,3 +237,44 @@ class MyLinkedList:
 # obj.deleteAtIndex(index)
 
 ```
+
+### [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) - [视频讲解](https://www.youtube.com/watch?v=G0_I-ZF0S38&t=26s) - [思路讲解](https://www.programmercarl.com/0206.%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8.html#%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95)
+```
+给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+ 
+示例 1：
+输入：head = [1,2,3,4,5]
+输出：[5,4,3,2,1]
+示例 2：
+输入：head = [1,2]
+输出：[2,1]
+示例 3：
+输入：head = []
+输出：[]
+
+提示：
+
+链表中节点的数目范围是 [0, 5000]
+-5000 <= Node.val <= 5000
+
+```
+```python
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        curr = head
+        pre = None
+        while (curr != None):
+            rec = curr.next
+            curr.next = pre
+            pre = curr
+            curr = rec
+        return pre 
+
+```
+
