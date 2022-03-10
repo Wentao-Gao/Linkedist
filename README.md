@@ -258,6 +258,9 @@ class MyLinkedList:
 -5000 <= Node.val <= 5000
 
 ```
+
+**Solution**
+
 ```python
 
 # Definition for singly-linked list.
@@ -278,3 +281,49 @@ class Solution:
 
 ```
 
+[24. 两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) - [视频讲解](https://www.youtube.com/watch?v=o811TZLAWOo) - [思路讲解](https://www.programmercarl.com/0024.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9.html#_24-%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9)
+
+```
+给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
+
+示例 1：
+输入：head = [1,2,3,4]
+输出：[2,1,4,3]
+示例 2：
+输入：head = []
+输出：[]
+示例 3：
+输入：head = [1]
+输出：[1]
+ 
+提示：
+链表中节点的数目在范围 [0, 100] 内
+0 <= Node.val <= 100
+
+```
+**Solution**
+
+```python
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def swapPairs(self, head: ListNode) -> ListNode:
+        res = ListNode(next = head)
+        pre = res
+
+        while pre.next and pre.next.next:
+            curr = pre.next
+            post = pre.next.next
+
+            curr.next = post.next
+            post.next = curr
+            pre.next = post
+
+            pre = pre.next.next
+        return res.next
+
+```
