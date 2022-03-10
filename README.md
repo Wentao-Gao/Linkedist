@@ -1,6 +1,7 @@
 # [链表](https://gwt9970161.github.io/Linkedist/)
 
--
+[算法与数据结构目录](https://gwt9970161.github.io/Data-structue-and-algorithym-python/)
+
 
 这一节将着重知识讲解与代码实践
 
