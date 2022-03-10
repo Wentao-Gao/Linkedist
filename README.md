@@ -1,4 +1,4 @@
-# [链表](https://gwt9970161.github.io/lianbiao/)
+# [链表](https://gwt9970161.github.io/Linkedist/)
 
 这一节将着重知识讲解与代码实践
 
